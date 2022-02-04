@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<!-- saved from url=(0442)https://s3.eu-west-1.amazonaws.com/eduflow-production/activity-resources/349855696563937.html?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2TAWW44RCEE6YREN%2F20220204%2Feu-west-1%2Fs3%2Faws4_request&X-Amz-Date=20220204T092012Z&X-Amz-Expires=600&X-Amz-SignedHeaders=host&response-content-disposition=inline%3B%20filename%2A%3DUTF-8%27%27M1-D10-QUIZ.html&X-Amz-Signature=8b953e53037d5ee2a614ee52794500ea155b81eae3181b93b36dec0a949aa92f -->
+<html class="js-focus-visible" data-js-focus-visible=""><!--
+        QUIZ GAME!
+
+        RULES:
+        / The player must guess correctly a certain amount of questions
+        / Each correct answer gives him one point
+        / Answers could be multiple or true/false
+        / At the end of the game, the user must know his/her total score
+
+        QUESTIONS:
+        / You can get them from this URL ( http://bit.ly/strive_QUIZZ ) or you can write your own
+        / Could be multiple of boolean (true / false)
+
+        HINTS:
+        / Keep a global variable score for the user score
+        / Keep a variable questionNumber for the question the user is answering
+        / When questionNumber is bigger then the available questions, present the score
+        / Start working with the questions saved in a variable (or you can use AJAX for fetching external questions if you already know how to do it!)
+        / Start with the easier version and THEN implement the EXTRAs
+        / Please debug everything / try it on the console to be sure of what to expect from your code
+
+        EXTRA:
+        / Show if the answer provided was the wrong one or correct it after clicking
+        / Present the questions one at a time instead of having all of them displayed together
+        / Let the user select difficulty and number of questions (you can get q/a from https://opentdb.com/api.php?amount=10&category=18&difficulty=easy modifying amount and difficulty)
+    
+        /* WHEN YOU ARE FINISHED
+          Commit and push the code to your personal GitHub repository; then post the link of your commit on the Homework section of today's Eduflow.
+        */
+    --><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><style type="text/css">
+@font-face {
+  font-weight: 400;
+  font-style:  normal;
+  font-family: 'Circular-Loom';
+
+  src: url('https://cdn.loom.com/assets/fonts/circular/CircularXXWeb-Book-cd7d2bcec649b1243839a15d5eb8f0a3.woff2') format('woff2');
+}
+
+@font-face {
+  font-weight: 500;
+  font-style:  normal;
+  font-family: 'Circular-Loom';
+
+  src: url('https://cdn.loom.com/assets/fonts/circular/CircularXXWeb-Medium-d74eac43c78bd5852478998ce63dceb3.woff2') format('woff2');
+}
+
+@font-face {
+  font-weight: 700;
+  font-style:  normal;
+  font-family: 'Circular-Loom';
+
+  src: url('https://cdn.loom.com/assets/fonts/circular/CircularXXWeb-Bold-83b8ceaf77f49c7cffa44107561909e4.woff2') format('woff2');
+}
+
+@font-face {
+  font-weight: 900;
+  font-style:  normal;
+  font-family: 'Circular-Loom';
+
+  src: url('https://cdn.loom.com/assets/fonts/circular/CircularXXWeb-Black-bf067ecb8aa777ceb6df7d72226febca.woff2') format('woff2');
+}</style><script style="display: none;">var tvt = tvt || {}; tvt.captureVariables = function(a){for(var b=
+new Date,c={},d=Object.keys(a||{}),e=0,f;f=d[e];e++)if(a.hasOwnProperty(f)&&"undefined"!=typeof a[f])try{var g=[];c[f]=JSON.stringify(a[f],function(h,k){try{if("function"!==typeof k){if("object"===typeof k&&null!==k){if(k instanceof HTMLElement||k instanceof Node||-1!=g.indexOf(k))return;g.push(k)}return k}}catch(m){}})}catch(h){}a=document.createEvent("CustomEvent");a.initCustomEvent("TvtRetrievedVariablesEvent",!0,!0,{variables:c,date:b});window.dispatchEvent(a)};window.setTimeout(function() {tvt.captureVariables({'dataLayer.hide': (function(a){a=a.split(".");for(var b=window,c=0;c<a.length&&(b=b[a[c]],b);c++);return b})('dataLayer.hide'),'gaData': window['gaData'],'dataLayer': window['dataLayer']})}, 2000);</script></head>
+  <body cz-shortcut-listen="true">
+    <script>
+      const questions = [
+        {
+          category: "Science: Computers",
+          type: "multiple",
+          difficulty: "easy",
+          question: "What does CPU stand for?",
+          correct_answer: "Central Processing Unit",
+          incorrect_answers: [
+            "Central Process Unit",
+            "Computer Personal Unit",
+            "Central Processor Unit",
+          ],
+        },
+        {
+          category: "Science: Computers",
+          type: "multiple",
+          difficulty: "easy",
+          question:
+            "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn&#039;t get modified?",
+          correct_answer: "Final",
+          incorrect_answers: ["Static", "Private", "Public"],
+        },
+        {
+          category: "Science: Computers",
+          type: "boolean",
+          difficulty: "easy",
+          question: "The logo for Snapchat is a Bell.",
+          correct_answer: "False",
+          incorrect_answers: ["True"],
+        },
+        {
+          category: "Science: Computers",
+          type: "boolean",
+          difficulty: "easy",
+          question:
+            "Pointers were not used in the original C programming language; they were added later on in C++.",
+          correct_answer: "False",
+          incorrect_answers: ["True"],
+        },
+        {
+          category: "Science: Computers",
+          type: "multiple",
+          difficulty: "easy",
+          question:
+            "What is the most preferred image format used for logos in the Wikimedia database?",
+          correct_answer: ".svg",
+          incorrect_answers: [".png", ".jpeg", ".gif"],
+        },
+        {
+          category: "Science: Computers",
+          type: "multiple",
+          difficulty: "easy",
+          question: "In web design, what does CSS stand for?",
+          correct_answer: "Cascading Style Sheet",
+          incorrect_answers: [
+            "Counter Strike: Source",
+            "Corrective Style Sheet",
+            "Computer Style Sheet",
+          ],
+        },
+        {
+          category: "Science: Computers",
+          type: "multiple",
+          difficulty: "easy",
+          question:
+            "What is the code name for the mobile operating system Android 7.0?",
+          correct_answer: "Nougat",
+          incorrect_answers: [
+            "Ice Cream Sandwich",
+            "Jelly Bean",
+            "Marshmallow",
+          ],
+        },
+        {
+          category: "Science: Computers",
+          type: "multiple",
+          difficulty: "easy",
+          question: "On Twitter, what is the character limit for a Tweet?",
+          correct_answer: "140",
+          incorrect_answers: ["120", "160", "100"],
+        },
+        {
+          category: "Science: Computers",
+          type: "boolean",
+          difficulty: "easy",
+          question: "Linux was first created as an alternative to Windows XP.",
+          correct_answer: "False",
+          incorrect_answers: ["True"],
+        },
+        {
+          category: "Science: Computers",
+          type: "multiple",
+          difficulty: "easy",
+          question:
+            "Which programming language shares its name with an island in Indonesia?",
+          correct_answer: "Java",
+          incorrect_answers: ["Python", "C", "Jakarta"],
+        },
+      ];
+
+      window.onload = function () {
+        // HINTS
+        // IF YOU ARE DISPLAYING ALL THE QUESTIONS AT ONCE:
+        // For each question, create a container for wrapping it; then create a radio button
+        // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio
+        // with, as options, both the correct answer and the incorrect ones
+        // (you'll probably need to google how to get the value from a radio button in JS to evaluate the final score)
+        //
+        // IF YOU ARE DISPLAYING ONE QUESTION AT A TIME
+        // Display the first question with the text and the radio buttons
+        // when the user selects an answer, pick the next question from the array and replace the old one with it
+        // saving the user's choice in a variable
+      };
+
+      // How to calculate the result? You can do it in 2 ways:
+      // If you are presenting all the questions together, just take all the radio buttons and check if the selected answer === correct_answer
+      // If you are presenting one question at a time, just add one point or not to the user score if the selected answer === correct_answer
+    </script>
+  
+
+</body><loom-container id="lo-engage-ext-container"><loom-shadow classname="resolved"></loom-shadow></loom-container><loom-container id="lo-companion-container"><loom-shadow classname="resolved"></loom-shadow></loom-container></html>
