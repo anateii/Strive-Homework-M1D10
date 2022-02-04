@@ -152,6 +152,142 @@ table td {
 
 <script style="display: none;">var tvt = tvt || {}; tvt.captureVariables = function(a){for(var b=
     new Date,c={},d=Object.keys(a||{}),e=0,f;f=d[e];e++)if(a.hasOwnProperty(f)&&"undefined"!=typeof a[f])try{var g=[];c[f]=JSON.stringify(a[f],function(h,k){try{if("function"!==typeof k){if("object"===typeof k&&null!==k){if(k instanceof HTMLElement||k instanceof Node||-1!=g.indexOf(k))return;g.push(k)}return k}}catch(m){}})}catch(h){}a=document.createEvent("CustomEvent");a.initCustomEvent("TvtRetrievedVariablesEvent",!0,!0,{variables:c,date:b});window.dispatchEvent(a)};window.setTimeout(function() {tvt.captureVariables({'dataLayer.hide': (function(a){a=a.split(".");for(var b=window,c=0;c<a.length&&(b=b[a[c]],b);c++);return b})('dataLayer.hide'),'gaData': window['gaData'],'dataLayer': window['dataLayer']})}, 2000);
+    
+    //JS EXERCISES
+
+    const printHeader = function(nameOfChapter) {
+    console.log(`\n=========${nameOfChapter}=========`)
+}
+
+//21) Given variables x = "John" and y = "Doe", write on the console "John <> Doe"
+
+printHeader ("EXERCISE 21")
+
+let x= "John"
+let y = "Doe"
+console.log (x +'<>'+y)
+
+
+
+//22) Create an object with properties such name, surname, email
+
+printHeader ("EXERCISE 22")
+
+let object = {
+  name: 'Ana',
+  surname: 'Matei',
+  email: 'ana@gmail.com'
+}
+ console.log (object)
+
+
+ 
+//23) Delete the email property from the previously created object
+
+printHeader ("EXERCISE 23")  
+
+    delete object.email
+    console.log (object)
+    
+    
+
+//24) Create an array with 10 strings in it
+
+printHeader ("EXERCISE 24")    
+    
+    let array = ['str1', 'str2', 'str3', 'str4', 'str5','str6','str7','str8','str9','str10',]
+    console.log(array)
+
+
+
+//25)Print in the console every string from the previous array
+
+printHeader ("EXERCISE 25") 
+
+for (let i = 0; i <array.length; i++)
+
+console.log (array[i])
+    
+
+
+//26)Create an array with 100 random numbers in it
+
+printHeader ("EXERCISE 26") 
+    
+const randomArray = (length, max) =>
+  Array(length).fill().map(() => Math.round(Math.random() * max))
+    
+console.log(randomArray(100,200))
+
+
+
+//28)Create an array of arrays, in which every array has 10 random numbers
+
+printHeader ("EXERCISE 28")
+
+let arrayOfArrays = [
+  [1,2,3,4,5,6,7,8,9,10],
+  [11,12,13,14,15,16,17,18,19,20],
+  [21,22,23,24,25,26,27,28,29,30]
+]
+    
+ console.log(arrayOfArrays) 
+ 
+ 
+//29)Create a function that gets 2 arrays as parameters and returns the longest one
+
+printHeader ("EXERCISE 29")
+
+
+let arr1=[1,2,3]
+let arr2=[5,9]
+const getLongestArr = function(arr1,arr2) {
+
+  if ( arr1.length > arr2.length) {
+    return arr1
+  } else if (arr1.length<arr2.length){
+    return arr2
+  }
+
+}
+
+console.log(getLongestArr(arr1,arr2))
+
+
+//30)Create a function that gets 2 arrays of numbers as parameters and returns the one with the higher sum of values
+
+printHeader ("EXERCISE 30")
+
+let array1 = [1, 2, 3, 4];
+let sum1 = 0;
+
+for (let i = 0; i < array1.length; i++) {
+    sum1 += array1[i];
+}
+console.log(sum1);
+
+let array2 = [1, 2, 3];
+let sum2 = 0;
+
+for (let i = 0; i < array2.length; i++) {
+    sum2 += array2[i];
+}
+console.log(sum2);
+
+
+const getHighestSum =function (array1,array2) {
+
+if(sum1>sum2){
+  return true
+}
+else if (sum1<sum2){
+  return false
+}
+
+}
+
+console.log(getHighestSum(array,array2))
+
     </script>
     
 
